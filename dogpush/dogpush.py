@@ -104,7 +104,6 @@ def _canonical_monitor(original, default_team=None, **kwargs):
         if m.get('options', {}).get(field) == value:
             del m['options'][field]
     for (field, value) in CONFIG['default_rules'].items():
-        print("field: " + field + ", value: " + value)
         if m.get(field) is None and value is None:
             del m[field]
         if m.get(field) == value:
