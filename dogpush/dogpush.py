@@ -81,6 +81,7 @@ DATADOG_DEFAULT_OPTIONS = {
 DATADOG_DEFAULT_RULES = {
   'multi': False,
   'type': 'metric alert'
+  'restricted_roles': None
 }
 
 def _pretty_yaml(d):
