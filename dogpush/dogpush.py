@@ -80,7 +80,8 @@ DATADOG_DEFAULT_OPTIONS = {
 
 DATADOG_DEFAULT_RULES = {
   'multi': False,
-  'type': 'metric alert'
+  'type': 'metric alert',
+  'restricted_roles': None
 }
 
 def _pretty_yaml(d):
@@ -103,7 +104,7 @@ def _canonical_monitor(original, default_team=None, **kwargs):
         if m.get('options', {}).get(field) == value:
             del m['options'][field]
     for (field, value) in CONFIG['default_rules'].items():
-        if m.get(field) == value:
+        if m.get(field, 'notNoneType') == value:
             del m[field]
     # If options is {'thresholds': {'critical': x}}, then it is redundant.
     if not m.get('options'):
