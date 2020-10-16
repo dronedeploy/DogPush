@@ -1,4 +1,4 @@
-PyYAML==3.11
+PyYAML==5.1
 datadog==0.10.0
 pytz==2015.7
 
